@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Background/Background Scenes/Background.gd" type="Script" id=1]
+[ext_resource path="res://Background/Background Scenes/Room Directions.tres" type="Resource" id=2]
+[ext_resource path="res://Background/Background Scenes/Background.png" type="Texture" id=3]
+[ext_resource path="res://Background/Background Scenes/Floor.png" type="Texture" id=4]
+[ext_resource path="res://Background/Background Scenes/Wall and Ceiling.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 50, 48 )
+
+[node name="Base Room" type="Node2D" groups=[
+"Room",
+]]
+script = ExtResource( 1 )
+room_exit_resource = ExtResource( 2 )
+
+[node name="Background Sprite" type="Sprite" parent="."]
+light_mask = 2
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Floor Sprite" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Wall and Celing" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Transition Area A" type="Area2D" parent="."]
+position = Vector2( 0, -80 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition Area A"]
+position = Vector2( 976, 560 )
+shape = SubResource( 1 )
+
+[node name="Transition Area B" type="Area2D" parent="."]
+position = Vector2( 48, 448 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition Area B"]
+position = Vector2( 0, 32 )
+shape = SubResource( 1 )
+[connection signal="input_event" from="Transition Area A" to="." method="_on_Transition_Area_A_input_event"]
+[connection signal="input_event" from="Transition Area B" to="." method="_on_Transition_Area_B_input_event"]

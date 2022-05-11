@@ -1,0 +1,1047 @@
+[gd_scene load_steps=97 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://Background/Background Scenes/Personal Room.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Interactables/Stocking/Stocking.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GUI/GUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Dialogue.gd" type="Script" id=5]
+[ext_resource path="res://Background/Background Scenes/Fire Place Room/Fireplace.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Transition Handler.gd" type="Script" id=7]
+[ext_resource path="res://Background/Background Scenes/Dining Room.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Background/Background Scenes/Ktichen.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Background/Background Scenes/Room Resource.gd" type="Script" id=10]
+[ext_resource path="res://Present Spawner.gd" type="Script" id=11]
+[ext_resource path="res://Menus.gd" type="Script" id=12]
+[ext_resource path="res://Game Over Menu.gd" type="Script" id=13]
+[ext_resource path="res://Audio/SFX/Fireplace Sound.wav" type="AudioStream" id=14]
+[ext_resource path="res://Timer.gd" type="Script" id=15]
+[ext_resource path="res://Interactables/Fire Place/Fire Place.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Interactables/Lamp/Lamp.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Interactables/Room Lights/Room Lights.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Interactables/TV/TV.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Interactables/Couch/Couch.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Interactables/Plants/Plant.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Interactables/Wreath/Wreath.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Interactables/Mirror/Mirror.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Interactables/Painting/Leaf Painting.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Interactables/Drawer Under The Sink/Kitchin Drawer.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Interactables/Drawer/Drawer.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Interactables/Window/Window.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Interactables/Christmas Tree/Christmas Tree.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Interactables/Salad/Salad.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Interactables/Meatballs/Meatballs.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Interactables/Candle/Candle.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Cut Scene/Cut Scene Manager.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Interactables/Sink/Kitchen Sink.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Interactables/Kitchen Cabinet/Kitchen Cabinet.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Interactables/Plate Display/Plate Display.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Interactables/Bowl Display/Bowl Display.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Interactables/Dining Table/Dining Table.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Interactables/Computer Desk/Computer Desk.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Interactables/Ball Painting/Ball Painting.tscn" type="PackedScene" id=39]
+[ext_resource path="res://Interactables/Turkey/Turkey.tscn" type="PackedScene" id=40]
+[ext_resource path="res://Gestures/Rub Gesture/Rub Gesture.tscn" type="PackedScene" id=41]
+[ext_resource path="res://Gestures/Sequence_Gesture/Sequence_Gesture.tscn" type="PackedScene" id=42]
+[ext_resource path="res://Gestures/Memory_Gesture/Memory_Gesture.tscn" type="PackedScene" id=43]
+[ext_resource path="res://Gestures/Basic Tap Gesture/Basic Tap Gesture.tscn" type="PackedScene" id=44]
+[ext_resource path="res://Background/Background Scenes/Decorations/Frames/Wintry Frame.tscn" type="PackedScene" id=45]
+[ext_resource path="res://Background/Background Scenes/Decorations/Ceiling Lights/Ceiling Lights.tscn" type="PackedScene" id=46]
+[ext_resource path="res://Background/Background Scenes/Decorations/Bells/Bell Plants.tscn" type="PackedScene" id=47]
+[ext_resource path="res://Decorations.gd" type="Script" id=48]
+[ext_resource path="res://Background/Background Scenes/Decorations/Light Switch/Light Switch.tscn" type="PackedScene" id=49]
+[ext_resource path="res://Background/Background Scenes/Decorations/Ceiling Lights/Ceiling Lights Purple.tscn" type="PackedScene" id=50]
+[ext_resource path="res://Background/Background Scenes/Decorations/Frames/Snowy Frame.tscn" type="PackedScene" id=51]
+[ext_resource path="res://Background/Background Scenes/Decorations/Frames/Gingerbread Frame.tscn" type="PackedScene" id=52]
+[ext_resource path="res://Background/Background Scenes/Decorations/Frames/Eccentric Frame.tscn" type="PackedScene" id=53]
+[ext_resource path="res://Background/Background Scenes/Decorations/Frames/Cookie Frame.tscn" type="PackedScene" id=54]
+[ext_resource path="res://Background/Background Scenes/Decorations/Frames/Green Tree Frame.tscn" type="PackedScene" id=55]
+[ext_resource path="res://Background/Background Scenes/Decorations/Tree and Star Decor/Tree and Star String Decor.tscn" type="PackedScene" id=56]
+[ext_resource path="res://Gestures/Swipe Up Gesture/Swipe Up Gesture.tscn" type="PackedScene" id=57]
+[ext_resource path="res://Background/Background Scenes/Decorations/Clock/Clock.tscn" type="PackedScene" id=58]
+[ext_resource path="res://Background/Background Scenes/Kitchen/Kitchen Window.tscn" type="PackedScene" id=59]
+[ext_resource path="res://Menus/Title Screen/Night Background.png" type="Texture" id=60]
+[ext_resource path="res://Menus/Title Screen/Settings Background.png" type="Texture" id=61]
+[ext_resource path="res://Fonts/monofonto.otf" type="DynamicFontData" id=62]
+[ext_resource path="res://Menus/Title Screen/Setting Button.png" type="Texture" id=63]
+[ext_resource path="res://Menus/Title Screen/Setting Button Hover.png" type="Texture" id=64]
+
+[sub_resource type="Resource" id=1]
+resource_local_to_scene = true
+script = ExtResource( 10 )
+room_direction_dictionary = {
+"A": Vector2( 1024, 0 )
+}
+
+[sub_resource type="Resource" id=2]
+resource_local_to_scene = true
+script = ExtResource( 10 )
+room_direction_dictionary = {
+"A": Vector2( -1024, 0 ),
+"B": Vector2( 0, 600 )
+}
+
+[sub_resource type="Resource" id=3]
+resource_local_to_scene = true
+script = ExtResource( 10 )
+room_direction_dictionary = {
+"A": Vector2( 0, -600 ),
+"B": Vector2( -1024, 0 )
+}
+
+[sub_resource type="Resource" id=4]
+resource_local_to_scene = true
+script = ExtResource( 10 )
+room_direction_dictionary = {
+"A": Vector2( 1024, 0 ),
+"B": Vector2( 0, 0 )
+}
+
+[sub_resource type="Resource" id=5]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "Wow a TV! Seems like an old one but looks like it seems like it is hard time looking for a signal." ]
+dialogue_text_interacted = [ "Seems like it only has one channel. Flashes galore. Definitely lost signal or two somewhere", "Maybe if i stare into it for a while, i can see an illusion of a gingerbread cookie", "Look at the time! Wow, I've been staring at this for quite some time now!", "Where is the clock?" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=6]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "What do you see? I see a leaves that symbolize calmness with a touch of melancholy.", "Was that too much?" ]
+dialogue_text_interacted = [ "The leaves look as though they are made of ice and could melt!", "Then they would return back to their flimsy selves and dangle like the star and tree decor around the house!", "I wonder why they're arranged the way they are though." ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=7]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "It's a drawer that might have stuff in it!", "It would be rude to take a peek!" ]
+dialogue_text_interacted = [ "It would be rude to take a gander inside!", "Or maybe Snowie has more of those cute tree displays in here!", "Those displays in the kitchen are pretty! Also it seems like they were arranged like that on purpose...", "Or maybe I'm overthinking it!" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="RectangleShape2D" id=8]
+resource_local_to_scene = true
+extents = Vector2( 25.8981, 27.7543 )
+
+[sub_resource type="Resource" id=9]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "This is a pretty lamp!", "It'd be fun to just turn it off and on.." ]
+dialogue_text_interacted = [ "Well, there must be a light switch somewhere..", "I wonder how fast I could turn this on or off!" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=10]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "It's-a-spicy meat-a-ball!", "Maybe I should try some!", ".............", "Wow! That is spicy!!!!! HOO AH" ]
+dialogue_text_interacted = [ "I don't think I want to try that again..", "I almost wanted to \"rub\" off the spice that stuck on my tongue!", "Almost like I would \"rub\" off the dust of the bells! But it wouldn't really help me right now..", "Sorry, I went on a tangent again..!" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=11]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "Comfy home, cozy fireplace. Those two things are your boilerplate formula for holiday cheer.", "Although there seems to be something odd about it" ]
+dialogue_text_interacted = [ "There is something odd about this fireplace..", "It's..", "IT'S.. OH MY..", "Just kidding! I thought there might be a secret entrance behind there. Something behind a painting would be more fun though" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=12]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "Nothing like a fancy, schmancy chandelier to add property value to the house huh?", "Although, I wonder how much it cost for Snowie to install this.." ]
+dialogue_text_interacted = [ "I haven't finished admiring the chandelier!", "I don't want to go!", "This chat will not end! I promise you!", "Okay, I'm done. I'm sure we can take a gander downstairs for more eye candy!" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=13]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "Is this a couch or a bed? Either way, comfort level looks to be over 9000", "I would take it home with me but it seems like it weighs more than I would be able to lift", "Only just a little over of what I could carry..", "Just a little..!" ]
+dialogue_text_interacted = [ "Those cushions have my name on it and I could fall asleep right now.", "Unfortunately, we are having guests over and I need to find those darn presents!" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=14]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "Such a fancy mirror. Let me check if anything is around here!", "Nope..nothing.", "Wait..", "There's a sticky note! It says..", "\"Bells left of the see-through door, require handling like that of a magic lamp for sure\"" ]
+dialogue_text_interacted = [ "\"Bells left of the see-through door, require handling like that of a magic lamp for sure\"", "A magic lamp? What do you do to a magic lamp? ", "I would use it as a teacup. That'd be such a fancy way of serving tea!" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=15]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "The weather outside looks frightful..", "But the fire is so delightful..", "Wait a minute.. I have heard this before" ]
+dialogue_text_interacted = [ "Jingle bells, jingle those bells, jingle all the...", "I feel like I need to start messing with these bells and have them ring constantly." ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=16]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "Trees like these make me want to do puzzles! Why? I am not sure why..", "Oh! Looks like there is a note on one of the ornaments. It says...", "\"Thy order is important, listen close.\"", "\"Wintergreen, snowy white, gingery brown, crystal blue, mellow purple, and shades of...\"", "I wonder what this means?" ]
+dialogue_text_interacted = [ "\"already visisted the base\"" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=17]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "What a lovely stocking or an oversized sock.", "It seems empty though so I hope someone will fill it up soon!" ]
+dialogue_text_interacted = [ "The stocking is still empty.. maybe we can light up our cheer somehow!", "I wonder if there are stockings in Snowie's drawer..", "There's a tag on this stocking!", "\"Furniture that for storing clothes, the displays of trees is where the riddles unfold\"", "Furniture? I wonder what this means?" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=18]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "Great barrier wreath! That's a big wreath.", "It's bigger than the ones you see on TV!" ]
+dialogue_text_interacted = [ "This wreath is bigger than the ones you see on TV!", "Speaking of TV, Snowie's TV has no signal. Probably need to take a look at it" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=19]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "A dancing plant! Can't say I have seen this anywhere in my life.", "Is it even real?", "You know what? I think we'll just watch it dance and not complain!" ]
+dialogue_text_interacted = [ "Yes, this is a dancing plant. I'll enjoy the show.", "Man! I was looking at it for so long! I wonder what time it is..", "I wonder if there is a clock in this place!" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=20]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "A wonderous kitchen sink, ready to be used.", "Unless it has dirty dishes in it, then that is a good reason not to use it." ]
+dialogue_text_interacted = [ "Are presents in the sink? Let me check!", "....", "OH!", "I have found...!!", "that the sink is working! Sigh.. i really should be looking for presents" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=21]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "There are so many things in here!", "Candy canes, snow cakes, mint cookies, and..", "Hmm..maybe it's just me but there is also a part that looks like it belongs inside a clock or something." ]
+dialogue_text_interacted = [ "Oh it's a wipe to clean the clock! ", "Instructions say to wipe up multiple times.", "Maybe I clean for Snowie!" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=22]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "The plates are displayed in a very symmetrical way!", "I wonder where all the other plates are though.", "And there are engravings on the plates!" ]
+dialogue_text_interacted = [ "\"Dining Room, Kitchen, Living Room\"", "These plates aren't in any of these places.. ", "There are also pictures of small trees with stars on the back of the plates as well." ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=23]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "Bowls on display and I love the look!" ]
+dialogue_text_interacted = [ "Very pretty bowls on the shelf!" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=24]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "This is an absolutely huge table!" ]
+dialogue_text_interacted = [ "Look at all the food on the table!", "I would go at the meatballs first. This is an objective view, never subjective." ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=25]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "This desk is so simple and yet so modern. It is totally fab with touch of minimalism!", "The TV looks like it's definitely seen some better days, it definitely adds to the aesthetic." ]
+dialogue_text_interacted = [ "The desk is great and that TV is lookin' vintage." ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=26]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "What a fine piece of modern art.", "I feel the artist's playfulness with hints of joy throughout the painting.", "I'm trying to sound sophisticated. Always wanted to do that!", "It seems that the circles are in some sort of a sequence." ]
+dialogue_text_interacted = [ "That reminds me, wasn't there something that may require some sort of sequence?", "Like, if there was an order that I had to check them out in.", "Or maybe this is just a wild imagination of mine!" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=27]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "A juicy chicken just waiting to be served!", "When do we get to eat? I'm starving!" ]
+dialogue_text_interacted = [ "Is it time to eat yet?", "The clock is kind of hard to see from here. It seems a little dusty.", "Perhaps it needs some cleaning...", "I would always swipe up to stop any dust from hitting the ground....", "That's just me!" ]
+is_already_visited = true
+gesture_completed = false
+
+[sub_resource type="Resource" id=28]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "A healthy salad.", "Nothing more, nothing less." ]
+dialogue_text_interacted = [ "Maybe it's time that I start eating right.." ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=29]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "An old-fashioned candle that really sets the mood for some christmas dinner!", "Is it time for dinner yet??" ]
+dialogue_text_interacted = [ "Is it time for dinner yet?" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="Resource" id=30]
+resource_local_to_scene = true
+script = ExtResource( 5 )
+dialogue_text = [ "What have we got here?", "Pots, pans, cutting board...", "Extra tree and star decor.." ]
+dialogue_text_interacted = [ "A cabinet full of stuff!", "There are more tree and star decor in here.. " ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="DynamicFont" id=31]
+size = 40
+font_data = ExtResource( 62 )
+
+[sub_resource type="DynamicFont" id=32]
+size = 30
+font_data = ExtResource( 62 )
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+title_screen = "res://Menus/Title Screen/Title Screen.tscn"
+game_time = 600
+
+[node name="Atmospheric Sounds" type="Node2D" parent="."]
+
+[node name="Fireplace" type="AudioStreamPlayer2D" parent="Atmospheric Sounds"]
+position = Vector2( 412, 400 )
+stream = ExtResource( 14 )
+volume_db = 3.0
+autoplay = true
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sky" type="Sprite" parent="Background"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 60 )
+centered = false
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Background"]
+position = Vector2( 700, -196 )
+amount = 2000
+lifetime = 10.0
+preprocess = 10.0
+emission_shape = 2
+emission_rect_extents = Vector2( 1000, 1 )
+gravity = Vector2( 5, 20 )
+scale_amount = 4.0
+
+[node name="Fireplace" parent="Background" instance=ExtResource( 6 )]
+room_exit_resource = SubResource( 1 )
+
+[node name="Ceiling Lights" type="Node2D" parent="Background/Fireplace"]
+
+[node name="Ceiling Lights" parent="Background/Fireplace/Ceiling Lights" instance=ExtResource( 46 )]
+position = Vector2( 320, 52 )
+
+[node name="Ceiling Lights2" parent="Background/Fireplace/Ceiling Lights" instance=ExtResource( 46 )]
+position = Vector2( 384, 52 )
+
+[node name="Ceiling Lights3" parent="Background/Fireplace/Ceiling Lights" instance=ExtResource( 46 )]
+position = Vector2( 448, 52 )
+
+[node name="Ceiling Lights4" parent="Background/Fireplace/Ceiling Lights" instance=ExtResource( 46 )]
+position = Vector2( 512, 52 )
+
+[node name="Ceiling Lights5" parent="Background/Fireplace/Ceiling Lights" instance=ExtResource( 46 )]
+position = Vector2( 576, 52 )
+
+[node name="Ceiling Lights6" parent="Background/Fireplace/Ceiling Lights" instance=ExtResource( 46 )]
+position = Vector2( 640, 52 )
+
+[node name="Ceiling Lights14" parent="Background/Fireplace/Ceiling Lights" instance=ExtResource( 46 )]
+position = Vector2( 640, 52 )
+
+[node name="Ceiling Lights7" parent="Background/Fireplace/Ceiling Lights" instance=ExtResource( 46 )]
+position = Vector2( 704, 52 )
+
+[node name="Ceiling Lights8" parent="Background/Fireplace/Ceiling Lights" instance=ExtResource( 46 )]
+position = Vector2( 768, 52 )
+
+[node name="Ceiling Lights9" parent="Background/Fireplace/Ceiling Lights" instance=ExtResource( 46 )]
+position = Vector2( 64, 52 )
+
+[node name="Ceiling Lights15" parent="Background/Fireplace/Ceiling Lights" instance=ExtResource( 46 )]
+position = Vector2( 832, 52 )
+
+[node name="Ceiling Lights16" parent="Background/Fireplace/Ceiling Lights" instance=ExtResource( 46 )]
+position = Vector2( 896, 52 )
+
+[node name="Ceiling Lights17" parent="Background/Fireplace/Ceiling Lights" instance=ExtResource( 46 )]
+position = Vector2( 960, 52 )
+
+[node name="Ceiling Lights10" parent="Background/Fireplace/Ceiling Lights" instance=ExtResource( 46 )]
+position = Vector2( 128, 52 )
+
+[node name="Ceiling Lights11" parent="Background/Fireplace/Ceiling Lights" instance=ExtResource( 46 )]
+position = Vector2( 192, 52 )
+
+[node name="Ceiling Lights12" parent="Background/Fireplace/Ceiling Lights" instance=ExtResource( 46 )]
+position = Vector2( 256, 52 )
+
+[node name="Kitchen" parent="Background" instance=ExtResource( 9 )]
+position = Vector2( 1024, 0 )
+room_exit_resource = SubResource( 2 )
+
+[node name="Ceiling Lights" type="Node2D" parent="Background/Kitchen"]
+position = Vector2( 1984, -152 )
+
+[node name="Ceiling Lights Purple" parent="Background/Kitchen/Ceiling Lights" instance=ExtResource( 50 )]
+position = Vector2( -1920, 204 )
+
+[node name="Ceiling Lights Purple2" parent="Background/Kitchen/Ceiling Lights" instance=ExtResource( 50 )]
+position = Vector2( -1856, 204 )
+
+[node name="Ceiling Lights Purple3" parent="Background/Kitchen/Ceiling Lights" instance=ExtResource( 50 )]
+position = Vector2( -1792, 204 )
+
+[node name="Ceiling Lights Purple10" parent="Background/Kitchen/Ceiling Lights" instance=ExtResource( 50 )]
+position = Vector2( -1344, 204 )
+
+[node name="Ceiling Lights Purple11" parent="Background/Kitchen/Ceiling Lights" instance=ExtResource( 50 )]
+position = Vector2( -1280, 204 )
+
+[node name="Ceiling Lights Purple12" parent="Background/Kitchen/Ceiling Lights" instance=ExtResource( 50 )]
+position = Vector2( -1216, 204 )
+
+[node name="Ceiling Lights Purple13" parent="Background/Kitchen/Ceiling Lights" instance=ExtResource( 50 )]
+position = Vector2( -1152, 204 )
+
+[node name="Ceiling Lights Purple14" parent="Background/Kitchen/Ceiling Lights" instance=ExtResource( 50 )]
+position = Vector2( -1088, 204 )
+
+[node name="Ceiling Lights Purple15" parent="Background/Kitchen/Ceiling Lights" instance=ExtResource( 50 )]
+position = Vector2( -1024, 204 )
+
+[node name="Ceiling Lights Purple4" parent="Background/Kitchen/Ceiling Lights" instance=ExtResource( 50 )]
+position = Vector2( -1728, 204 )
+
+[node name="Ceiling Lights Purple5" parent="Background/Kitchen/Ceiling Lights" instance=ExtResource( 50 )]
+position = Vector2( -1664, 204 )
+
+[node name="Ceiling Lights Purple6" parent="Background/Kitchen/Ceiling Lights" instance=ExtResource( 50 )]
+position = Vector2( -1600, 204 )
+
+[node name="Ceiling Lights Purple7" parent="Background/Kitchen/Ceiling Lights" instance=ExtResource( 50 )]
+position = Vector2( -1536, 204 )
+
+[node name="Ceiling Lights Purple8" parent="Background/Kitchen/Ceiling Lights" instance=ExtResource( 50 )]
+position = Vector2( -1472, 204 )
+
+[node name="Ceiling Lights Purple9" parent="Background/Kitchen/Ceiling Lights" instance=ExtResource( 50 )]
+position = Vector2( -1408, 204 )
+
+[node name="Bells" type="Node2D" parent="Background/Kitchen"]
+position = Vector2( -228, 176 )
+
+[node name="Kitchen Window" parent="Background/Kitchen" instance=ExtResource( 59 )]
+position = Vector2( 464, 296 )
+
+[node name="Dining ROom" parent="Background" instance=ExtResource( 8 )]
+position = Vector2( 1024, 600 )
+room_exit_resource = SubResource( 3 )
+
+[node name="Personal Room" parent="Background" groups=[
+"Corner",
+] instance=ExtResource( 2 )]
+position = Vector2( 0, 600 )
+room_exit_resource = SubResource( 4 )
+
+[node name="Ceiling Lights2" type="Node2D" parent="Background/Personal Room"]
+position = Vector2( 0, 20 )
+
+[node name="Ceiling Lights" parent="Background/Personal Room/Ceiling Lights2" instance=ExtResource( 46 )]
+position = Vector2( 320, 52 )
+
+[node name="Ceiling Lights2" parent="Background/Personal Room/Ceiling Lights2" instance=ExtResource( 46 )]
+position = Vector2( 384, 52 )
+
+[node name="Ceiling Lights3" parent="Background/Personal Room/Ceiling Lights2" instance=ExtResource( 46 )]
+position = Vector2( 448, 52 )
+
+[node name="Ceiling Lights4" parent="Background/Personal Room/Ceiling Lights2" instance=ExtResource( 46 )]
+position = Vector2( 512, 52 )
+
+[node name="Ceiling Lights5" parent="Background/Personal Room/Ceiling Lights2" instance=ExtResource( 46 )]
+position = Vector2( 576, 52 )
+
+[node name="Ceiling Lights6" parent="Background/Personal Room/Ceiling Lights2" instance=ExtResource( 46 )]
+position = Vector2( 640, 52 )
+
+[node name="Ceiling Lights14" parent="Background/Personal Room/Ceiling Lights2" instance=ExtResource( 46 )]
+position = Vector2( 640, 52 )
+
+[node name="Ceiling Lights7" parent="Background/Personal Room/Ceiling Lights2" instance=ExtResource( 46 )]
+position = Vector2( 704, 52 )
+
+[node name="Ceiling Lights8" parent="Background/Personal Room/Ceiling Lights2" instance=ExtResource( 46 )]
+position = Vector2( 768, 52 )
+
+[node name="Ceiling Lights9" parent="Background/Personal Room/Ceiling Lights2" instance=ExtResource( 46 )]
+position = Vector2( 64, 52 )
+
+[node name="Ceiling Lights15" parent="Background/Personal Room/Ceiling Lights2" instance=ExtResource( 46 )]
+position = Vector2( 832, 52 )
+
+[node name="Ceiling Lights16" parent="Background/Personal Room/Ceiling Lights2" instance=ExtResource( 46 )]
+position = Vector2( 896, 52 )
+
+[node name="Ceiling Lights17" parent="Background/Personal Room/Ceiling Lights2" instance=ExtResource( 46 )]
+position = Vector2( 960, 52 )
+
+[node name="Ceiling Lights10" parent="Background/Personal Room/Ceiling Lights2" instance=ExtResource( 46 )]
+position = Vector2( 128, 52 )
+
+[node name="Ceiling Lights11" parent="Background/Personal Room/Ceiling Lights2" instance=ExtResource( 46 )]
+position = Vector2( 192, 52 )
+
+[node name="Ceiling Lights12" parent="Background/Personal Room/Ceiling Lights2" instance=ExtResource( 46 )]
+position = Vector2( 256, 52 )
+
+[node name="Decorations" type="Node2D" parent="Background"]
+script = ExtResource( 48 )
+
+[node name="Bells2" type="Node2D" parent="Background/Decorations"]
+position = Vector2( -68, 52 )
+
+[node name="Bell Plants" parent="Background/Decorations/Bells2" instance=ExtResource( 47 )]
+position = Vector2( 328, 140 )
+
+[node name="Bell Plants2" parent="Background/Decorations/Bells2" instance=ExtResource( 47 )]
+position = Vector2( 588, 120 )
+
+[node name="Bell Plants5" parent="Background/Decorations/Bells2" instance=ExtResource( 47 )]
+position = Vector2( 1820, 328 )
+
+[node name="Bell Plants8" parent="Background/Decorations/Bells2" instance=ExtResource( 47 )]
+position = Vector2( 2048, 328 )
+
+[node name="Bell Plants6" parent="Background/Decorations/Bells2" instance=ExtResource( 47 )]
+position = Vector2( 1840, 272 )
+
+[node name="Bell Plants7" parent="Background/Decorations/Bells2" instance=ExtResource( 47 )]
+position = Vector2( 2036, 272 )
+
+[node name="Bell Plants9" parent="Background/Decorations/Bells2" instance=ExtResource( 47 )]
+position = Vector2( 1852, 892 )
+
+[node name="Bell Plants10" parent="Background/Decorations/Bells2" instance=ExtResource( 47 )]
+position = Vector2( 2048, 896 )
+
+[node name="Bell Plants11" parent="Background/Decorations/Bells2" instance=ExtResource( 47 )]
+position = Vector2( 1872, 836 )
+
+[node name="Bell Plants12" parent="Background/Decorations/Bells2" instance=ExtResource( 47 )]
+position = Vector2( 2036, 840 )
+
+[node name="Bell Plants3" parent="Background/Decorations/Bells2" instance=ExtResource( 47 )]
+position = Vector2( 676, 108 )
+
+[node name="Bell Plants4" parent="Background/Decorations/Bells2" instance=ExtResource( 47 )]
+position = Vector2( 772, 148 )
+
+[node name="Switch" type="Node2D" parent="Background/Decorations"]
+
+[node name="Light Switch" parent="Background/Decorations/Switch" instance=ExtResource( 49 )]
+position = Vector2( 700, 292 )
+
+[node name="Frames" type="Node2D" parent="Background/Decorations"]
+position = Vector2( 1640, 156 )
+
+[node name="Gingerbread Frame" parent="Background/Decorations/Frames" instance=ExtResource( 52 )]
+position = Vector2( 112, 96 )
+
+[node name="Gingerbread Frame2" parent="Background/Decorations/Frames" instance=ExtResource( 52 )]
+position = Vector2( -1312, 648 )
+
+[node name="Wintry Frame" parent="Background/Decorations/Frames" instance=ExtResource( 45 )]
+position = Vector2( 204, 4 )
+
+[node name="Wintry Frame2" parent="Background/Decorations/Frames" instance=ExtResource( 45 )]
+position = Vector2( -1228, 648 )
+
+[node name="Eccentric Frame" parent="Background/Decorations/Frames" instance=ExtResource( 53 )]
+position = Vector2( 284, -12 )
+
+[node name="Cookie Frame" parent="Background/Decorations/Frames" instance=ExtResource( 54 )]
+position = Vector2( 204, 112 )
+
+[node name="Green Tree Frame" parent="Background/Decorations/Frames" instance=ExtResource( 55 )]
+position = Vector2( 288, 80 )
+
+[node name="Snowy Frame" parent="Background/Decorations/Frames" instance=ExtResource( 51 )]
+position = Vector2( 112, -16 )
+
+[node name="String Decor" type="Node2D" parent="Background/Decorations"]
+
+[node name="Tree and Star String Decor" parent="Background/Decorations/String Decor" instance=ExtResource( 56 )]
+position = Vector2( 844, 804 )
+
+[node name="Tree and Star String Decor2" parent="Background/Decorations/String Decor" instance=ExtResource( 56 )]
+position = Vector2( 900, 788 )
+
+[node name="Tree and Star String Decor3" parent="Background/Decorations/String Decor" instance=ExtResource( 56 )]
+position = Vector2( 948, 804 )
+
+[node name="Tree and Star String Decor7" parent="Background/Decorations/String Decor" instance=ExtResource( 56 )]
+position = Vector2( 1172, 388 )
+
+[node name="Tree and Star String Decor9" parent="Background/Decorations/String Decor" instance=ExtResource( 56 )]
+position = Vector2( 616, 284 )
+
+[node name="Tree and Star String Decor4" parent="Background/Decorations/String Decor" instance=ExtResource( 56 )]
+position = Vector2( 628, 820 )
+
+[node name="Tree and Star String Decor5" parent="Background/Decorations/String Decor" instance=ExtResource( 56 )]
+position = Vector2( 696, 800 )
+
+[node name="Tree and Star String Decor6" parent="Background/Decorations/String Decor" instance=ExtResource( 56 )]
+position = Vector2( 764, 824 )
+
+[node name="Tree and Star String Decor8" parent="Background/Decorations/String Decor" instance=ExtResource( 56 )]
+position = Vector2( 1244, 864 )
+
+[node name="Clock" type="Node2D" parent="Background/Decorations"]
+
+[node name="Clock" parent="Background/Decorations/Clock" instance=ExtResource( 58 )]
+position = Vector2( 1140, 736 )
+
+[node name="Lights" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Interact Layer" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Main Interactables" type="Node2D" parent="Interact Layer"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TV" parent="Interact Layer/Main Interactables" instance=ExtResource( 19 )]
+position = Vector2( 520, 980 )
+dialogue_resource = SubResource( 5 )
+
+[node name="Swipe Up Gesture" parent="Interact Layer/Main Interactables/TV" instance=ExtResource( 57 )]
+position = Vector2( 624, -344 )
+
+[node name="Leaf Painting" parent="Interact Layer/Main Interactables" instance=ExtResource( 24 )]
+position = Vector2( 128, 816 )
+dialogue_resource = SubResource( 6 )
+
+[node name="Sequence Gesture" parent="Interact Layer/Main Interactables/Leaf Painting" instance=ExtResource( 42 )]
+position = Vector2( 816, 24 )
+time_to_complete = 9
+
+[node name="CollisionShape2D" parent="Interact Layer/Main Interactables/Leaf Painting/Sequence Gesture/Tap Area" index="0"]
+position = Vector2( 157.252, 48.6595 )
+
+[node name="CollisionShape2D2" parent="Interact Layer/Main Interactables/Leaf Painting/Sequence Gesture/Tap Area" index="1"]
+position = Vector2( 89.2519, -431.341 )
+
+[node name="CollisionShape2D3" parent="Interact Layer/Main Interactables/Leaf Painting/Sequence Gesture/Tap Area" index="2"]
+position = Vector2( -470.748, -527.341 )
+
+[node name="Drawer" parent="Interact Layer/Main Interactables" instance=ExtResource( 26 )]
+position = Vector2( 104, 1016 )
+dialogue_resource = SubResource( 7 )
+
+[node name="Memory Gesture" parent="Interact Layer/Main Interactables/Drawer" instance=ExtResource( 43 )]
+position = Vector2( 1480, -860 )
+
+[node name="CollisionShape2D" parent="Interact Layer/Main Interactables/Drawer/Memory Gesture/Tap Area" index="0"]
+position = Vector2( -124.241, -59.06 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D2" parent="Interact Layer/Main Interactables/Drawer/Memory Gesture/Tap Area" index="1"]
+position = Vector2( -212.241, -27.06 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D3" parent="Interact Layer/Main Interactables/Drawer/Memory Gesture/Tap Area" index="2"]
+position = Vector2( -304.241, -39.06 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D4" parent="Interact Layer/Main Interactables/Drawer/Memory Gesture/Tap Area" index="3"]
+position = Vector2( -300.241, -155.06 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D5" parent="Interact Layer/Main Interactables/Drawer/Memory Gesture/Tap Area" index="4"]
+position = Vector2( -212.241, -135.06 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D6" parent="Interact Layer/Main Interactables/Drawer/Memory Gesture/Tap Area" index="5"]
+position = Vector2( -128.241, -151.06 )
+shape = SubResource( 8 )
+
+[node name="Lamp" parent="Interact Layer/Main Interactables" instance=ExtResource( 17 )]
+position = Vector2( 492, 308 )
+dialogue_resource = SubResource( 9 )
+
+[node name="Basic_Tap_Gesture" parent="Interact Layer/Main Interactables/Lamp" instance=ExtResource( 44 )]
+position = Vector2( 208, -20 )
+
+[node name="Meatballs" parent="Interact Layer/Main Interactables" instance=ExtResource( 30 )]
+position = Vector2( 1608, 988 )
+dialogue_resource = SubResource( 10 )
+
+[node name="Rub Gesture" parent="Interact Layer/Main Interactables/Meatballs" instance=ExtResource( 41 )]
+position = Vector2( -904, -792 )
+
+[node name="Side Interactables" type="Node2D" parent="Interact Layer"]
+
+[node name="Fire Place" parent="Interact Layer/Side Interactables" instance=ExtResource( 16 )]
+position = Vector2( 404, 428 )
+dialogue_resource = SubResource( 11 )
+
+[node name="Room Lights" parent="Interact Layer/Side Interactables" instance=ExtResource( 18 )]
+position = Vector2( 1532, 716 )
+dialogue_resource = SubResource( 12 )
+
+[node name="Couch" parent="Interact Layer/Side Interactables" instance=ExtResource( 20 )]
+position = Vector2( 724, 468 )
+dialogue_resource = SubResource( 13 )
+
+[node name="Mirror" parent="Interact Layer/Side Interactables" instance=ExtResource( 23 )]
+position = Vector2( 336, 1028 )
+dialogue_resource = SubResource( 14 )
+
+[node name="Window" parent="Interact Layer/Side Interactables" instance=ExtResource( 27 )]
+position = Vector2( 844, 192 )
+dialogue_resource = SubResource( 15 )
+
+[node name="Christmas Tree" parent="Interact Layer/Side Interactables" instance=ExtResource( 28 )]
+position = Vector2( 152, 340 )
+dialogue_resource = SubResource( 16 )
+
+[node name="Stocking" parent="Interact Layer/Side Interactables" instance=ExtResource( 3 )]
+position = Vector2( 404, 376 )
+dialogue_resource = SubResource( 17 )
+
+[node name="Wreath" parent="Interact Layer/Side Interactables" instance=ExtResource( 22 )]
+position = Vector2( 404, 192 )
+dialogue_resource = SubResource( 18 )
+
+[node name="Plant" parent="Interact Layer/Side Interactables" instance=ExtResource( 21 )]
+position = Vector2( 308, 304 )
+dialogue_resource = SubResource( 19 )
+
+[node name="Kitchen Sink" parent="Interact Layer/Side Interactables" instance=ExtResource( 33 )]
+position = Vector2( 1344, 392 )
+dialogue_resource = SubResource( 20 )
+
+[node name="Kitchen Cabinet" parent="Interact Layer/Side Interactables" instance=ExtResource( 34 )]
+position = Vector2( 1480, 156 )
+dialogue_resource = SubResource( 21 )
+
+[node name="Plate Display" parent="Interact Layer/Side Interactables" instance=ExtResource( 35 )]
+position = Vector2( 1168, 284 )
+dialogue_resource = SubResource( 22 )
+
+[node name="Bowl Display" parent="Interact Layer/Side Interactables" instance=ExtResource( 36 )]
+position = Vector2( 1168, 172 )
+dialogue_resource = SubResource( 23 )
+
+[node name="Dining Table" parent="Interact Layer/Side Interactables" instance=ExtResource( 37 )]
+position = Vector2( 1440, 1060 )
+dialogue_resource = SubResource( 24 )
+
+[node name="Modern Desk" parent="Interact Layer/Side Interactables" instance=ExtResource( 38 )]
+position = Vector2( 520, 1060 )
+dialogue_resource = SubResource( 25 )
+
+[node name="Ball Painting" parent="Interact Layer/Side Interactables" instance=ExtResource( 39 )]
+position = Vector2( 520, 804 )
+dialogue_resource = SubResource( 26 )
+
+[node name="Turkey" parent="Interact Layer/Side Interactables" instance=ExtResource( 40 )]
+position = Vector2( 1472, 972 )
+dialogue_resource = SubResource( 27 )
+
+[node name="Salad" parent="Interact Layer/Side Interactables" instance=ExtResource( 29 )]
+position = Vector2( 1304, 988 )
+dialogue_resource = SubResource( 28 )
+
+[node name="Candle" parent="Interact Layer/Side Interactables" instance=ExtResource( 31 )]
+position = Vector2( 1388, 940 )
+dialogue_resource = SubResource( 29 )
+
+[node name="Kitchen Drawer" parent="Interact Layer/Side Interactables" instance=ExtResource( 25 )]
+position = Vector2( 1552, 448 )
+dialogue_resource = SubResource( 30 )
+
+[node name="Presents" type="Node2D" parent="."]
+position = Vector2( 240, 456 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Present Spawn Area" type="ColorRect" parent="Presents"]
+visible = false
+margin_left = -80.0
+margin_top = -8.0
+margin_right = 70.0
+margin_bottom = 62.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menus" type="CanvasLayer" parent="."]
+script = ExtResource( 12 )
+
+[node name="Game Over Menu" type="Control" parent="Menus"]
+visible = false
+margin_top = 1000.0
+margin_right = 1024.0
+margin_bottom = 1600.0
+mouse_filter = 2
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="TextureRect" parent="Menus/Game Over Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -250.0
+margin_right = 400.0
+margin_bottom = 20.0
+mouse_filter = 2
+texture = ExtResource( 61 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menus/Game Over Menu/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="Menus/Game Over Menu/ColorRect/VBoxContainer"]
+margin_top = 30.0
+margin_right = 800.0
+margin_bottom = 171.0
+mouse_filter = 2
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="Menus/Game Over Menu/ColorRect/VBoxContainer/MarginContainer2"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 780.0
+margin_bottom = 121.0
+custom_fonts/font = SubResource( 31 )
+custom_colors/font_color = Color( 1, 0.572549, 0.388235, 1 )
+text = "It's all good! There's always next year!"
+align = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menus/Game Over Menu/ColorRect/VBoxContainer"]
+margin_top = 175.0
+margin_right = 800.0
+margin_bottom = 239.0
+alignment = 1
+
+[node name="Restart" type="TextureButton" parent="Menus/Game Over Menu/ColorRect/VBoxContainer/HBoxContainer"]
+margin_left = 300.0
+margin_right = 500.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 63 )
+texture_hover = ExtResource( 64 )
+
+[node name="Restart Text2" type="Label" parent="Menus/Game Over Menu/ColorRect/VBoxContainer/HBoxContainer/Restart"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 7.0
+margin_right = 4.0
+margin_bottom = 7.0
+custom_fonts/font = SubResource( 31 )
+text = "Restart"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Menus/Game Over Menu"]
+
+[node name="Win Menu" type="Control" parent="Menus"]
+visible = false
+margin_top = 1000.0
+margin_right = 1024.0
+margin_bottom = 1600.0
+mouse_filter = 2
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="TextureRect" parent="Menus/Win Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -250.0
+margin_right = 400.0
+margin_bottom = 20.0
+mouse_filter = 2
+texture = ExtResource( 61 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menus/Win Menu/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_right = -12.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Menus/Win Menu/ColorRect/VBoxContainer"]
+margin_top = 30.0
+margin_right = 768.0
+margin_bottom = 171.0
+mouse_filter = 2
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="Menus/Win Menu/ColorRect/VBoxContainer/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 748.0
+margin_bottom = 121.0
+custom_fonts/font = SubResource( 31 )
+custom_colors/font_color = Color( 1, 0.572549, 0.388235, 1 )
+text = "You found all the presents. Our guests may rest easy!"
+align = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menus/Win Menu/ColorRect/VBoxContainer"]
+margin_top = 175.0
+margin_right = 768.0
+margin_bottom = 239.0
+alignment = 1
+
+[node name="Restart" type="TextureButton" parent="Menus/Win Menu/ColorRect/VBoxContainer/HBoxContainer"]
+margin_left = 284.0
+margin_right = 484.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 63 )
+texture_hover = ExtResource( 64 )
+
+[node name="Restart Text" type="Label" parent="Menus/Win Menu/ColorRect/VBoxContainer/HBoxContainer/Restart"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 7.0
+margin_bottom = 7.0
+custom_fonts/font = SubResource( 31 )
+text = "Restart"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Menus/Win Menu"]
+
+[node name="Tween" type="Tween" parent="Menus"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="UI" instance=ExtResource( 4 )]
+mouse_filter = 2
+
+[node name="Timer" type="Control" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+size_flags_horizontal = 3
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Timer"]
+margin_right = 1024.0
+margin_bottom = 40.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time BG" type="Sprite" parent="UI/Timer/HBoxContainer"]
+position = Vector2( 512, 20 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 64 )
+
+[node name="Label" type="Label" parent="UI/Timer/HBoxContainer"]
+margin_left = 482.0
+margin_top = 1.0
+margin_right = 542.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 32 )
+text = "5:00"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Game Timer" type="Timer" parent="UI/Timer/HBoxContainer"]
+one_shot = true
+
+[node name="Room Transition Handler" type="Node2D" parent="."]
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="Room Transition Handler"]
+anchor_mode = 0
+current = true
+
+[node name="Tween" type="Tween" parent="Room Transition Handler"]
+
+[node name="Measuring Debug" type="ColorRect" parent="."]
+visible = false
+margin_left = 502.779
+margin_top = 257.562
+margin_right = 758.779
+margin_bottom = 449.562
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Snowie" parent="." instance=ExtResource( 32 )]
+[connection signal="button_up" from="Menus/Game Over Menu/ColorRect/VBoxContainer/HBoxContainer/Restart" to="Menus" method="_on_Restart_button_up"]
+[connection signal="button_up" from="Menus/Win Menu/ColorRect/VBoxContainer/HBoxContainer/Restart" to="Menus" method="_on_Restart_button_up"]
+[connection signal="timeout" from="UI/Timer/HBoxContainer/Game Timer" to="UI/Timer" method="_on_Game_Timer_timeout"]
+[connection signal="timeout" from="UI/Timer/HBoxContainer/Game Timer" to="." method="_on_Game_Timer_timeout"]
+
+[editable path="Interact Layer/Main Interactables/Leaf Painting/Sequence Gesture"]
+
+[editable path="Interact Layer/Main Interactables/Drawer/Memory Gesture"]

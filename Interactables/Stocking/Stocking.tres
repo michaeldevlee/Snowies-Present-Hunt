@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Dialogue.gd" type="Script" id=1]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+dialogue_text = [ "What a lovely stocking or an oversized sock.", "It seems empty though so I hope someone will fill it up soon!" ]
+dialogue_text_interacted = [ "The stocking is still empty.. maybe we can light up our cheer somehow!" ]
+is_already_visited = false
+gesture_completed = false

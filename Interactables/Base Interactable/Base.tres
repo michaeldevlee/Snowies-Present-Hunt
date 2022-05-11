@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Dialogue.gd" type="Script" id=1]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+dialogue_text = [ "\"this is a basic interactable" ]
+dialogue_text_interacted = [ "\"already visisted the base\"" ]
+is_already_visited = false
+gesture_completed = false

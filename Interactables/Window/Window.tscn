@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Interactables/Base Interactable/Base_Interactable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Dialogue.gd" type="Script" id=2]
+[ext_resource path="res://Interactables/Window/Window Transparent.png" type="Texture" id=3]
+[ext_resource path="res://Interactables/Window/Window.png" type="Texture" id=4]
+
+[sub_resource type="Resource" id=1]
+resource_local_to_scene = true
+script = ExtResource( 2 )
+dialogue_text = [ "\"this is a basic interactable" ]
+dialogue_text_interacted = [ "\"already visisted the base\"" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="CanvasItemMaterial" id=10]
+
+[sub_resource type="SpriteFrames" id=11]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=12]
+resource_local_to_scene = true
+extents = Vector2( 62, 62 )
+
+[sub_resource type="Animation" id=13]
+resource_local_to_scene = true
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_local_to_scene = true
+
+[sub_resource type="Animation" id=15]
+resource_local_to_scene = true
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_local_to_scene = true
+
+[sub_resource type="Animation" id=9]
+resource_local_to_scene = true
+
+[node name="Window" instance=ExtResource( 1 )]
+dialogue_resource = SubResource( 1 )
+
+[node name="TextureRect" type="Light2D" parent="." index="0"]
+texture = ExtResource( 3 )
+mode = 3
+range_item_cull_mask = 2
+
+[node name="Sprite" parent="." index="1"]
+material = SubResource( 10 )
+frames = SubResource( 11 )
+
+[node name="CollisionShape2D" parent="Interact Area" index="0"]
+shape = SubResource( 12 )
+
+[node name="Animation Player" parent="." index="4"]
+"anims/Gesture Feedback" = SubResource( 13 )
+"anims/Hover Animation" = SubResource( 14 )
+anims/Idle = SubResource( 15 )
+anims/Interact = SubResource( 16 )
+anims/Transition = SubResource( 9 )

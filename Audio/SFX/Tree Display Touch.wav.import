@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Tree Display Touch.wav-209a686affe8e6f3852aad6a28391954.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Tree Display Touch.wav"
+dest_files=[ "res://.import/Tree Display Touch.wav-209a686affe8e6f3852aad6a28391954.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Gestures/Basic Tap Gesture/Basic_Tap_Gesture.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 24 )
+
+[node name="Basic_Tap_Gesture" type="Node2D" groups=[
+"Gesture",
+]]
+script = ExtResource( 1 )
+goal_tap_count = 15
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Tap Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tap Area"]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[connection signal="input_event" from="Tap Area" to="." method="_on_Tap_Area_input_event"]

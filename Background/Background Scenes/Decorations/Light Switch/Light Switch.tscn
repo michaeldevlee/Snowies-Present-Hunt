@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Background/Background Scenes/Decorations/Light Switch/Light Switch.png" type="Texture" id=1]
+[ext_resource path="res://Background/Background Scenes/Decorations/Light Switch/Light Switch.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Switch On"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light Switch Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Switch off"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light Switch Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16, 24 )
+
+[node name="Light Switch" type="Node2D" groups=[
+"Interactable",
+]]
+script = ExtResource( 2 )
+
+[node name="Light Switch Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Switch On" = SubResource( 1 )
+"anims/Switch off" = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 3 )
+[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]

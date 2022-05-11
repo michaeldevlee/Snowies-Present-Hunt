@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Dialogue.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+dialogue_text = [ "Hello Everyone! Gather around the tree! There are presents waiting for you!", "Huh? Why am I sweating? Not sure why!", "It's not like your presents were missing and we were scrambling to get them all! Haha...", "Anyway! Merry Christmas everyone!!" ]
+dialogue_text_interacted = [  ]
+is_already_visited = false
+gesture_completed = false

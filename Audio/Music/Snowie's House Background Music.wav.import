@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Snowie's House Background Music.wav-0980f3c09ad119b009081a42fa04c2e3.sample"
+
+[deps]
+
+source_file="res://Audio/Music/Snowie's House Background Music.wav"
+dest_files=[ "res://.import/Snowie's House Background Music.wav-0980f3c09ad119b009081a42fa04c2e3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

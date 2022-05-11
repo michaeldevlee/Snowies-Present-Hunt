@@ -1,0 +1,114 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Interactables/Base Interactable/Base_Interactable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Dialogue.gd" type="Script" id=2]
+[ext_resource path="res://Interactables/TV/TV Sprite Sheet.png" type="Texture" id=3]
+
+[sub_resource type="Resource" id=1]
+resource_local_to_scene = true
+script = ExtResource( 2 )
+dialogue_text = [ "\"this is a basic interactable" ]
+dialogue_text_interacted = [ "\"already visisted the base\"" ]
+is_already_visited = false
+gesture_completed = false
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 96, 0, 96, 96 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 192, 0, 96, 96 )
+
+[sub_resource type="SpriteFrames" id=5]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+resource_local_to_scene = true
+extents = Vector2( 40.3073, 27.7549 )
+
+[sub_resource type="Animation" id=7]
+resource_local_to_scene = true
+resource_name = "Gesture Feedback"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_local_to_scene = true
+
+[sub_resource type="Animation" id=9]
+resource_local_to_scene = true
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_local_to_scene = true
+
+[sub_resource type="Animation" id=11]
+resource_local_to_scene = true
+
+[node name="TV" instance=ExtResource( 1 )]
+dialogue_resource = SubResource( 1 )
+
+[node name="Sprite" parent="." index="1"]
+frames = SubResource( 5 )
+animation = "New Anim"
+playing = false
+
+[node name="CollisionShape2D" parent="Interact Area" index="0"]
+shape = SubResource( 6 )
+
+[node name="Animation Player" parent="." index="4"]
+"anims/Gesture Feedback" = SubResource( 7 )
+"anims/Hover Animation" = SubResource( 8 )
+anims/Idle = SubResource( 9 )
+anims/Interact = SubResource( 10 )
+anims/Transition = SubResource( 11 )

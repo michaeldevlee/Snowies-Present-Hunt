@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Wind.ogg-beeb5f3a5f389cbfcec5955844ccbfbe.oggstr"
+
+[deps]
+
+source_file="res://Audio/SFX/Wind.ogg"
+dest_files=[ "res://.import/Wind.ogg-beeb5f3a5f389cbfcec5955844ccbfbe.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

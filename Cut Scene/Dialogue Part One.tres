@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Dialogue.gd" type="Script" id=1]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource( 1 )
+dialogue_text = [ "...", "Where did all of the presents go?", "Oh no..!", "It appears as if the party planners thought that this was a birthday party instead of a christmas party..", "They must have hid the presents all over the place by now!", "The guests are arriving soon!! What am I going to do??" ]
+dialogue_text_interacted = [  ]
+is_already_visited = false
+gesture_completed = false

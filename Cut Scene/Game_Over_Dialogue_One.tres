@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Dialogue.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+dialogue_text = [ "Welcome in guys..!!", "The thing is...", "Your presents were hid by my party planners by mistake and.. but we haven't managed to find all of them!", "So sorry!! You know what they say, it's the thought that counts!" ]
+dialogue_text_interacted = [  ]
+is_already_visited = false
+gesture_completed = false

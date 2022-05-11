@@ -1,0 +1,764 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Menus/Title Screen/Setting Button Hover.png" type="Texture" id=1]
+[ext_resource path="res://Menus/Title Screen/Screen.gd" type="Script" id=2]
+[ext_resource path="res://Menus/Title Screen/Settings Screen.gd" type="Script" id=3]
+[ext_resource path="res://Menus/Title Screen/Title Screen House.png" type="Texture" id=4]
+[ext_resource path="res://Menus/Title Screen/Pine Trees.png" type="Texture" id=5]
+[ext_resource path="res://Menus/Title Screen/Night Background.png" type="Texture" id=6]
+[ext_resource path="res://Menus/Title Screen/Star_1.png" type="Texture" id=7]
+[ext_resource path="res://Menus/Title Screen/Chimney Animation.png" type="Texture" id=8]
+[ext_resource path="res://Fonts/Minecraft.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Menus/Title Screen/Tool Box.png" type="Texture" id=11]
+[ext_resource path="res://Menus/Title Screen/Setting Button.png" type="Texture" id=12]
+[ext_resource path="res://Menus/Title Screen/Settings Background.png" type="Texture" id=13]
+[ext_resource path="res://Menus/Title Screen/Sign.png" type="Texture" id=14]
+
+[sub_resource type="Curve" id=1]
+min_value = -40.0
+max_value = 40.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.148571, 21.8182 ), 0.0, 0.0, 0, 0, Vector2( 0.308571, -17.4545 ), 0.0, 0.0, 0, 0, Vector2( 0.44, 21.0909 ), 0.0, 0.0, 0, 0, Vector2( 0.56, -18.9091 ), 0.0, 0.0, 0, 0, Vector2( 0.645714, 18.9091 ), 0.0, 0.0, 0, 0, Vector2( 0.828571, -14.5455 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="Animation" id=22]
+resource_name = "Chimney Smoke"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Curve" id=9]
+min_value = -40.0
+max_value = 40.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.142857, 30.5455 ), -135.227, -135.227, 0, 0, Vector2( 0.251429, -2.90909 ), 0.0, 0.0, 0, 0, Vector2( 0.428571, -25.4545 ), 114.219, 114.219, 0, 0, Vector2( 0.605714, 21.0909 ), 219.436, 219.436, 0, 0, Vector2( 0.817143, -24.7273 ), 106.061, 106.061, 0, 0, Vector2( 1, 16 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 7 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=14]
+resource_local_to_scene = true
+extents = Vector2( 32, 24 )
+
+[sub_resource type="Animation" id=15]
+resource_name = "Select"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.75, 1.0625 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=16]
+size = 25
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 35
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 30
+font_data = ExtResource( 10 )
+
+[sub_resource type="Animation" id=19]
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("P:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 376, 336 ), Vector2( 376, 328 ), Vector2( 376, 336 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("L:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.7, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 400, 336 ), Vector2( 400, 328 ), Vector2( 400, 336 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("A:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.4, 1.6, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 424, 336 ), Vector2( 424, 328 ), Vector2( 424, 336 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Y:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2.1, 2.3, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 448, 336 ), Vector2( 448, 328 ), Vector2( 448, 336 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("P:custom_fonts/font:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 30 ]
+}
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 56, 32 )
+
+[sub_resource type="Animation" id=21]
+resource_name = "Select"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.75, 1.0625 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Title Screen" type="Node2D"]
+script = ExtResource( 2 )
+next_scene = "res://Main.tscn"
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="Trees" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Snow Background" type="CPUParticles2D" parent="."]
+position = Vector2( 512, -191.508 )
+amount = 500
+lifetime = 15.0
+preprocess = 15.0
+randomness = 1.0
+emission_shape = 2
+emission_rect_extents = Vector2( 512, 1 )
+spread = 90.0
+gravity = Vector2( 0, 8 )
+tangential_accel_curve = SubResource( 1 )
+scale_amount = 2.0
+
+[node name="Chimney" type="Sprite" parent="."]
+position = Vector2( 304, -104 )
+texture = ExtResource( 8 )
+centered = false
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Chimney"]
+autoplay = "Chimney Smoke"
+playback_speed = 0.7
+"anims/Chimney Smoke" = SubResource( 22 )
+
+[node name="House" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Snow Foreground" type="CPUParticles2D" parent="."]
+position = Vector2( 481.709, -44.0061 )
+amount = 100
+lifetime = 20.0
+preprocess = 15.0
+randomness = 1.0
+emission_shape = 2
+emission_rect_extents = Vector2( 512, 1 )
+spread = 90.0
+gravity = Vector2( 0, 8 )
+angular_velocity = 1.0
+tangential_accel_curve = SubResource( 9 )
+scale_amount = 5.0
+
+[node name="Stars" type="Node2D" parent="."]
+
+[node name="Star_1" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 796.058, 33.2426 )
+frames = SubResource( 13 )
+frame = 3
+playing = true
+
+[node name="Star_2" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 934.318, 20.5291 )
+frames = SubResource( 13 )
+frame = 2
+playing = true
+
+[node name="Star_3" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 651.971, 19.9993 )
+frames = SubResource( 13 )
+frame = 1
+playing = true
+
+[node name="Star_4" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 487.225, 41.1886 )
+frames = SubResource( 13 )
+frame = 1
+playing = true
+
+[node name="Star_5" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 289.105, 23.7075 )
+frames = SubResource( 13 )
+frame = 1
+playing = true
+
+[node name="Star_6" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 543.376, 14.702 )
+frames = SubResource( 13 )
+playing = true
+
+[node name="Star_7" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 571.982, 47.5454 )
+frames = SubResource( 13 )
+playing = true
+
+[node name="Star_8" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 774.339, 76.6806 )
+frames = SubResource( 13 )
+frame = 3
+playing = true
+
+[node name="Star_9" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 737.258, 25.2967 )
+frames = SubResource( 13 )
+frame = 3
+playing = true
+
+[node name="Star_10" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 867.042, 16.2912 )
+frames = SubResource( 13 )
+frame = 2
+playing = true
+
+[node name="Star_11" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 993.648, 67.1455 )
+frames = SubResource( 13 )
+frame = 2
+playing = true
+
+[node name="Star_12" type="AnimatedSprite" parent="Stars"]
+position = Vector2( 239.25, 39.4268 )
+frames = SubResource( 13 )
+speed_scale = 0.9
+playing = true
+
+[node name="Play" type="TextureButton" parent="." groups=[
+"Button",
+]]
+margin_left = 368.0
+margin_top = 368.0
+margin_right = 480.0
+margin_bottom = 512.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 736, 480 )
+texture = ExtResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+shape = SubResource( 14 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/Select = SubResource( 15 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Settings Screen" type="Control" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -280.0
+margin_top = 256.0
+margin_right = -280.0
+margin_bottom = 256.0
+mouse_filter = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="CanvasLayer/Settings Screen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_top = 748.0
+margin_right = 526.0
+margin_bottom = 1348.0
+rect_pivot_offset = Vector2( 400, 250 )
+mouse_filter = 2
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Settings Screen/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2.0
+custom_constants/margin_right = 100
+custom_constants/margin_top = 50
+custom_constants/margin_left = 100
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Settings Screen/Background/MarginContainer"]
+margin_left = 100.0
+margin_top = 50.0
+margin_right = 428.0
+margin_bottom = 550.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Settings Screen/Background/MarginContainer/HBoxContainer"]
+margin_right = 328.0
+margin_bottom = 500.0
+size_flags_horizontal = 3
+custom_constants/separation = 50
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Settings Screen/Background/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 38.0
+margin_right = 328.0
+margin_bottom = 102.0
+alignment = 1
+
+[node name="TextureRect" type="TextureButton" parent="CanvasLayer/Settings Screen/Background/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 64.0
+margin_right = 264.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 12 )
+texture_hover = ExtResource( 1 )
+
+[node name="SFX Volume" type="Label" parent="CanvasLayer/Settings Screen/Background/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 16 )
+text = "SFX Volume"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFX Slider" type="HSlider" parent="CanvasLayer/Settings Screen/Background/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 152.0
+margin_right = 328.0
+margin_bottom = 168.0
+value = 100.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Settings Screen/Background/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 218.0
+margin_right = 328.0
+margin_bottom = 282.0
+alignment = 1
+
+[node name="TextureRect" type="TextureButton" parent="CanvasLayer/Settings Screen/Background/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 64.0
+margin_right = 264.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 12 )
+texture_hover = ExtResource( 1 )
+
+[node name="Music Volume" type="Label" parent="CanvasLayer/Settings Screen/Background/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -32.0
+margin_right = 100.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 16 )
+text = "Music Volume"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music Slider" type="HSlider" parent="CanvasLayer/Settings Screen/Background/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 332.0
+margin_right = 328.0
+margin_bottom = 348.0
+value = 100.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Settings Screen/Background/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 398.0
+margin_right = 328.0
+margin_bottom = 462.0
+alignment = 1
+
+[node name="Settings_Return_Button" type="TextureButton" parent="CanvasLayer/Settings Screen/Background/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 64.0
+margin_right = 264.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 12 )
+texture_hover = ExtResource( 1 )
+
+[node name="Music Volume2" type="Label" parent="CanvasLayer/Settings Screen/Background/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/Settings_Return_Button"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_top = -64.0
+margin_right = 100.0
+custom_fonts/font = SubResource( 16 )
+text = "Return Home"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="CanvasLayer/Settings Screen"]
+
+[node name="Help Screen" type="Control" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -280.0
+margin_top = 256.0
+margin_right = -280.0
+margin_bottom = 256.0
+mouse_filter = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="CanvasLayer/Help Screen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_top = 748.0
+margin_right = 526.0
+margin_bottom = 1348.0
+rect_pivot_offset = Vector2( 400, 250 )
+mouse_filter = 2
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Help Screen/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -6.0
+margin_bottom = 13.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Help Screen/Background/MarginContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 470.0
+margin_bottom = 563.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Help Screen/Background/MarginContainer/HBoxContainer"]
+margin_right = 420.0
+margin_bottom = 513.0
+size_flags_horizontal = 3
+custom_constants/separation = 50
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="How To Play" type="Label" parent="CanvasLayer/Help Screen/Background/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 420.0
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "How to play"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="How To Play2" type="Label" parent="CanvasLayer/Help Screen/Background/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 76.0
+margin_right = 420.0
+margin_bottom = 131.0
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Left click or tap the various items in each room."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="How To Play3" type="Label" parent="CanvasLayer/Help Screen/Background/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 181.0
+margin_right = 420.0
+margin_bottom = 265.0
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "A trusty little light bulb will indicate that you have entered \"puzzle\" mode"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="How To Play4" type="Label" parent="CanvasLayer/Help Screen/Background/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 315.0
+margin_right = 420.0
+margin_bottom = 399.0
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "You will have to solve the puzzle to move on to other items that might have presents hidden in them!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Help Screen/Background/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 449.0
+margin_right = 420.0
+margin_bottom = 513.0
+alignment = 1
+
+[node name="Help_Screen_Return_Button" type="TextureButton" parent="CanvasLayer/Help Screen/Background/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 110.0
+margin_right = 310.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 12 )
+texture_hover = ExtResource( 1 )
+
+[node name="Music Volume2" type="Label" parent="CanvasLayer/Help Screen/Background/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/Help_Screen_Return_Button"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -100.0
+margin_top = -64.0
+margin_right = 100.0
+custom_fonts/font = SubResource( 16 )
+text = "Return Home"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="CanvasLayer/Help Screen"]
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Title" type="Label" parent="."]
+margin_left = 280.0
+margin_top = 152.0
+margin_right = 479.0
+margin_bottom = 311.0
+custom_fonts/font = SubResource( 17 )
+text = "Snowie's
+Present
+Hunt"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings Text" type="Label" parent="."]
+margin_left = 672.0
+margin_top = 384.0
+margin_right = 807.0
+margin_bottom = 420.0
+custom_fonts/font = SubResource( 17 )
+text = "Settings"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Help Text" type="Label" parent="."]
+margin_left = 136.0
+margin_top = 344.0
+margin_right = 345.0
+margin_bottom = 419.0
+custom_fonts/font = SubResource( 17 )
+text = "Help!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play Text" type="Node2D" parent="."]
+
+[node name="P" type="Label" parent="Play Text"]
+margin_left = 376.0
+margin_top = 336.64
+margin_right = 416.0
+margin_bottom = 368.64
+custom_fonts/font = SubResource( 18 )
+text = "P"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="L" type="Label" parent="Play Text"]
+margin_left = 400.0
+margin_top = 336.0
+margin_right = 440.0
+margin_bottom = 368.0
+custom_fonts/font = SubResource( 18 )
+text = "L"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A" type="Label" parent="Play Text"]
+margin_left = 424.0
+margin_top = 336.0
+margin_right = 464.0
+margin_bottom = 368.0
+custom_fonts/font = SubResource( 18 )
+text = "A"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Y" type="Label" parent="Play Text"]
+margin_left = 448.0
+margin_top = 336.0
+margin_right = 488.0
+margin_bottom = 368.0
+custom_fonts/font = SubResource( 18 )
+text = "Y"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Play Text"]
+autoplay = "Bounce"
+playback_speed = 3.0
+anims/Bounce = SubResource( 19 )
+
+[node name="Sign" type="Sprite" parent="."]
+position = Vector2( 240, 456 )
+texture = ExtResource( 14 )
+
+[node name="Sign Area" type="Area2D" parent="Sign"]
+position = Vector2( 0, -16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sign/Sign Area"]
+shape = SubResource( 20 )
+
+[node name="Sign Animator" type="AnimationPlayer" parent="Sign"]
+anims/Select = SubResource( 21 )
+
+[node name="Transition" type="ColorRect" parent="."]
+light_mask = 0
+margin_right = 1024.0
+margin_bottom = 600.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="Play" to="." method="_on_Play_button_up"]
+[connection signal="input_event" from="Sprite/Area2D" to="." method="_on_Area2D_input_event"]
+[connection signal="value_changed" from="CanvasLayer/Settings Screen/Background/MarginContainer/HBoxContainer/VBoxContainer/SFX Slider" to="." method="_on_SFX_Slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Settings Screen/Background/MarginContainer/HBoxContainer/VBoxContainer/Music Slider" to="." method="_on_Music_Slider_value_changed"]
+[connection signal="button_up" from="CanvasLayer/Settings Screen/Background/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/Settings_Return_Button" to="." method="_on_Settings_Return_Button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Help Screen/Background/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer3/Help_Screen_Return_Button" to="." method="_on_Help_Screen_Return_Button_button_up"]
+[connection signal="input_event" from="Sign/Sign Area" to="." method="_on_Sign_Area_input_event"]

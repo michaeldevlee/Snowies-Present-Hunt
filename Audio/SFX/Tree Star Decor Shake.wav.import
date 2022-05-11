@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Tree Star Decor Shake.wav-e0fdd077acbeb9cef6b826749be1154e.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Tree Star Decor Shake.wav"
+dest_files=[ "res://.import/Tree Star Decor Shake.wav-e0fdd077acbeb9cef6b826749be1154e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/568995__strongbot__metal-whistle.wav-d665b8645725245e3029ccd73bf6429b.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/568995__strongbot__metal-whistle.wav"
+dest_files=[ "res://.import/568995__strongbot__metal-whistle.wav-d665b8645725245e3029ccd73bf6429b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

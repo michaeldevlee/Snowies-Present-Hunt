@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Dialogue.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+dialogue_text = [ "I have an idea!", "Will you help me find the presents? I know it's such short notice but I have to clean the house!", "You'll do a great job, no pressure. You just have to find them in 10 minutes. ", "Knowing the party planners, they probably hid them really well and you may have to perform weird puzzles to get them!", "My christmas party rests in your hands..", "Well then, I am off!" ]
+dialogue_text_interacted = [  ]
+is_already_visited = false
+gesture_completed = false

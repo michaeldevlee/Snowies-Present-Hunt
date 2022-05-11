@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Background/Background Scenes/Base Room.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Background/Background Scenes/Room Resource.gd" type="Script" id=2]
+[ext_resource path="res://Background/Background Scenes/Arrow.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Resource" id=1]
+resource_local_to_scene = true
+script = ExtResource( 2 )
+room_direction_dictionary = {
+"A": Vector2( 1024, 0 )
+}
+
+[node name="Fireplace" groups=[
+"Corner",
+] instance=ExtResource( 1 )]
+room_exit_resource = SubResource( 1 )
+
+[node name="Transition Area A" parent="." index="3"]
+position = Vector2( 5.94604, -76.4324 )
+
+[node name="CollisionShape2D" parent="Transition Area A" index="0"]
+position = Vector2( 951.644, 555.585 )
+
+[node name="CollisionShape2D" parent="Transition Area B" index="0"]
+position = Vector2( 16.9898, 24.6942 )
+
+[node name="Arrow" parent="." index="5" instance=ExtResource( 3 )]
+position = Vector2( 953.734, 486.282 )
